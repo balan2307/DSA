@@ -1,0 +1,38 @@
+class Solution:
+ def nextPermutation(self, nums: List[int]) -> None:
+    
+      
+     n=len(nums)
+     ind1=-1
+     ind2=-1
+     for i in range(n-2,-1,-1):
+        if nums[i]<nums[i+1]:
+            ind1=i
+            break
+     
+     for i in range(n-1,-1,-1):
+        if nums[i]>nums[ind1]:
+            ind2=i
+            break
+    
+
+     if ind1>=0 and ind2>=0 : nums[ind1],nums[ind2]=nums[ind2],nums[ind1]
+     
+     dup=nums[ind1+1:]
+     dup.reverse()
+     nums[ind1+1:]=dup
+     return nums
+     
+     
+    
+    
+    
+     
+            
+     
+        
+      
+    
+             
+            
+        
