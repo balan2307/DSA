@@ -1,0 +1,16 @@
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+def maximumProfit(prices):
+
+         
+
+    prof=0
+    buy=prices[0]
+
+    for i in range(len(prices)):
+        buy=min(prices[i],buy)
+        prof=max(prices[i]-buy,prof)
+    return prof
